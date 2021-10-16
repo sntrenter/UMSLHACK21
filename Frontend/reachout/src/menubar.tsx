@@ -15,11 +15,17 @@ function Menubar(props: Props) {
       ]);
       const [selectedOption, setSelectedOption] = useState(items[0].value);
 
+      function handleChange(value: string): void{
+        console.log("test",value)
+        console.log(selectedOption)
+        setSelectedOption(value)
+        props.passUser(selectedOption)
+        // handle other stuff like persisting to store etc
+      }
       return (
         <select 
         value={selectedOption}
-        //onChange={()=>{props.passUser(selectedOption);console.log("test")}}
-        onChange={e => {setSelectedOption(e.target.value); props.passUser(selectedOption)}}
+        onChange= {e => {props.passUser(e.target.value);setSelectedOption(e.target.value)}}
         >
           {items.map(item => (
             <option

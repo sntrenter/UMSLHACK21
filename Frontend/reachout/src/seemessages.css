@@ -1,0 +1,22 @@
+.msgcontainer {
+    width: 80%;
+    height: 200px;
+    background: aqua;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  .msgone {
+    width: 40%;
+    height: 200px;
+    background: #ff0000;
+    float: left;
+    color: white;
+  }
+  
+  .msgtwo {
+    margin-left: 40%;
+    height: 200px;
+    background: black;
+    color: white;
+  }

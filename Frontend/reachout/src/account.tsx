@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 interface Props {
-    passUser: Function
+    user?: string
 }
 
-function Account(){//props: Props) {
+function Account(props: Props) {
 
       return (
-        <p>Hello Worl</p>
+        <p>Hello Worl,your name is {props.user}</p>
       );
     }
 export default Account

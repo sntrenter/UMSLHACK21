@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Menubar from './menubar' 
 
 function App() {
+  const [user, setUser] = useState("user1");
+  useEffect(() => {
+    console.log(user);
+  });
   return (
     <div className="App">
-      <Menubar></Menubar> 
+      <Menubar passUser={setUser} ></Menubar> 
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

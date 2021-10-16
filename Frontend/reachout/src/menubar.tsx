@@ -1,16 +1,35 @@
 import React, { useState } from 'react';
 
-function Menubar() {
-  // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
-
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  );
+interface Props {
+    passUser: Function
 }
+
+function Menubar(props: Props) {
+    const [items] = React.useState([
+        {
+          label: "John",
+          value: "user1"
+        },
+        { label: "James", value: "user2" },
+        { label: "Jamantha", value: "user3" }
+      ]);
+      const [selectedOption, setSelectedOption] = useState(items[0].value);
+
+      return (
+        <select 
+        value={selectedOption}
+        //onChange={()=>{props.passUser(selectedOption);console.log("test")}}
+        onChange={e => {setSelectedOption(e.target.value); props.passUser(selectedOption)}}
+        >
+          {items.map(item => (
+            <option
+              key={item.value}
+              value={item.value}
+            >
+              {item.label}
+            </option>
+          ))}
+        </select>
+      );
+    }
 export default Menubar

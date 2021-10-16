@@ -4,6 +4,7 @@ import "./App.css";
 import Menubar from "./menubar";
 import Account from "./account";
 import SeeMessages from "./seemessages";
+import ViewRequests from "./viewRequests";
 
 function App() {
   const [user, setUser] = useState("user1");
@@ -24,7 +25,10 @@ function App() {
           <button onClick={()=>console.log("new help req:",helpReq)}>SUBMIT</button>
         </div>
       case 3:
-        return <p>num 3</p>
+        return <div>
+          <p>Avalible Help requests</p>
+          <ViewRequests user ={user}></ViewRequests>
+        </div>
       case 4:
         return  <SeeMessages user={user}></SeeMessages>
     }
@@ -40,21 +44,7 @@ function App() {
       </div>
       <div>
         {returnMenu(menuSelect)}
-      </div>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>    
     </div>
   );
 }

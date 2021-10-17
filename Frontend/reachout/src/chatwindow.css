@@ -10,6 +10,7 @@
 .chatHeader {
     height: 10%;
     color: violet;
+    overflow: hidden;
 }
 .msgs{
     border: 3px solid wheat;

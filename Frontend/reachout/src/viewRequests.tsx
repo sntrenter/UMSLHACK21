@@ -14,7 +14,7 @@ let msgs = [
 
 
 function ViewRequests(props: Props) {
-   
+   console.log("(API), request current help requests")
       return (
           <div>
             {msgs.map((i)=>{return <ReqMessage  msg = {i}></ReqMessage>})}

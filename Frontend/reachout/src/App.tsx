@@ -28,7 +28,7 @@ function App() {
             ></input>
             <button
               className="sbutton"
-              onClick={() => console.log("new help req:", helpReq)}
+              onClick={() => console.log("(API)new help req:", helpReq)}
             >
               SUBMIT
             </button>

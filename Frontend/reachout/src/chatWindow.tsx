@@ -3,6 +3,7 @@ import "./chatwindow.css";
 import ChatMessages from "./chatMessages";
 interface Props {
   //msg: string;
+  helpermessage: string;
 }
 
 let msgs = [
@@ -18,11 +19,21 @@ let msgs = [
 function ChatWindow(props: Props) {
   return (
     <div className="chat">
-      <div className="chatHeader">Chat Header</div>
+      <div className="chatHeader">{props.helpermessage}</div>
       <div className="msgs">
         <ChatMessages msgs={msgs}></ChatMessages>
       </div>
-      <div className="sendsection">send message</div>
+      <div className="sendsection">
+      <input type="text"
+              onChange={()=>{}}
+            ></input>
+            <button
+              className=""
+              onClick={() =>{}}
+            >
+              SUBMIT
+            </button> 
+      </div>
     </div>
   );
 }

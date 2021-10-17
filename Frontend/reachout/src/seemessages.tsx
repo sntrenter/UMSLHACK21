@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./seemessages.css";
 import ReqMessage from "./reqMessage"
 import ChatWindow from "./chatWindow"
@@ -15,6 +15,11 @@ let msgs = [
 
 
 function SeeMessages(props: Props) {
+    const [helperMessage, setHelperMessage] = useState("Please select a message!");
+    console.log("(API)see message request related to user")
+    useEffect(() => {
+        console.log("(API) pull messages related to chat");
+      });
   return (
     <div>
       <div>
@@ -22,14 +27,15 @@ function SeeMessages(props: Props) {
       </div>
       <div className="msgcontainer">
         <div className="msgone">
-            <div>Messages</div>
+            <div></div>
             <div>
-            {msgs.map((i)=>{return <ReqMessage  msg = {i}></ReqMessage>})}
+            {msgs.map((i)=>{return <ReqMessage msgfunction = {setHelperMessage}
+             msg = {i}></ReqMessage>})}
 
             </div>
         </div>
         <div className="msgtwo">
-        <ChatWindow></ChatWindow>
+        <ChatWindow helpermessage = {helperMessage}></ChatWindow>
         </div>
       </div>
     </div>

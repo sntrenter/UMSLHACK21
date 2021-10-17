@@ -4,6 +4,7 @@ import ChatMessages from "./chatMessages";
 interface Props {
   //msg: string;
   helpermessage: string;
+  user: string;
 }
 
 let msgs = [
@@ -17,6 +18,19 @@ let msgs = [
 ];
 
 function ChatWindow(props: Props) {
+    if(props.helpermessage === "Please select a message!"){
+        msgs = []
+    }else{
+        msgs = [
+            { sender: "Hello!" },
+            { helper: "Are these Test Messages?" },
+            { sender: "Yes they are" },
+            { sender: "is this too meta?" },
+            { helper: "Yes" },
+            { sender: "wow" },
+            { helper: "wow" },
+          ]; 
+    }
   return (
     <div className="chat">
       <div className="chatHeader">{props.helpermessage}</div>

@@ -8,7 +8,7 @@ import ViewRequests from "./viewRequests";
 import { async } from "q";
 
 function App() {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState("1");
   const [users, setUsers] = useState({});
   const [menuSelect, setMenuSelect] = useState(1);
   const [helpReq, setHelpReq] = useState("");

@@ -6,11 +6,10 @@ interface Props {
 }
 
 function Menubar(props: Props) {
-    const [items] = React.useState([{"id":1,"name":"JOHN"},{"id":2,"name":"ROSE"},{"id":3,"name":"BEN"},{"id":4,"name":"RACHEL"}]
-      
-      );
-    
-      const [selectedOption, setSelectedOption] = useState(items[0].name);
+    let  [items] = React.useState([{"id":1,"name":"JOHN"},{"id":2,"name":"ROSE"},{"id":3,"name":"BEN"},{"id":4,"name":"RACHEL"}]   );
+    const [selectedOption, setSelectedOption] = useState(items[0].name);
+
+
 
       function handleChange(value: string): void{
         console.log("test",value)

@@ -4,7 +4,7 @@ import ReqMessage from "./reqMessage"
 import ChatWindow from "./chatWindow"
 
 interface Props {
-  user?: string;
+  user: string;
 }
 let msgs = [
     "help me find a support group for people stuggling with classes",
@@ -23,7 +23,7 @@ function SeeMessages(props: Props) {
   return (
     <div>
       <div>
-        <p>this page will displace the messages for {props.user}</p>
+        <p> this page will displace the messages for user with ID {props.user}</p>
       </div>
       <div className="msgcontainer">
         <div className="msgone">
@@ -35,7 +35,7 @@ function SeeMessages(props: Props) {
             </div>
         </div>
         <div className="msgtwo">
-        <ChatWindow helpermessage = {helperMessage}></ChatWindow>
+        <ChatWindow user = {props.user} helpermessage = {helperMessage}></ChatWindow>
         </div>
       </div>
     </div>

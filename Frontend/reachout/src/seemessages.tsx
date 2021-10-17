@@ -6,11 +6,7 @@ import ChatWindow from "./chatWindow";
 interface Props {
   user: string;
 }
-let msgs = [
-  "help me find a support group for people stuggling with classes",
-  "anybody know who on campus is in charge of renting out example space",
-  "Interested in a party! message for address!",
-];
+
 
 function SeeMessages(props: Props) {
   const [helperMessage, setHelperMessage] = useState(

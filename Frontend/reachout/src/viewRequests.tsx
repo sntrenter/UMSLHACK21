@@ -36,6 +36,17 @@ function ViewRequests(props: Props) {
       useEffect(() => {
         gettopics()
       }, []);
+      //function acceptrequest(msg: any){
+      //  const requestOptions = {
+      //      method: 'POST',
+      //          headers: { 'Content-Type': 'application/json' },
+      //          body: JSON.stringify({ 
+      //            //id: ,
+      //            helper_id: props.user,
+      //          })
+      //  };
+      //  fetch('/reachout-service/topics', requestOptions)
+      //}
    console.log("(API), request current help requests")
       return (
           <div>

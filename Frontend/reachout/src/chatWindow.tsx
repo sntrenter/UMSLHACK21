@@ -38,15 +38,18 @@ function ChatWindow(props: Props) {
         <ChatMessages msgs={msgs}></ChatMessages>
       </div>
       <div className="sendsection">
-      <input type="text"
+          <div className = "">
+          <input type="text"
               onChange={()=>{}}
             ></input>
             <button
-              className=""
+              className="sendtbbn"
               onClick={() =>{}}
             >
               SUBMIT
             </button> 
+          </div>
+
       </div>
     </div>
   );

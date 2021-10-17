@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import ReqMessage from './reqMessage'
 import "./general.css"
 
@@ -14,6 +14,22 @@ let msgs = [
 
 
 function ViewRequests(props: Props) {
+    
+    const gettopics = async () => {
+        fetch("/reachout-service/topics")
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("topics data", data);
+            msgs = []
+            data.forEach((element: any) => { 
+                msgs.push(element["desc"])
+            });
+            //setUsers(data);
+          });
+      };
+      useEffect(() => {
+        gettopics()
+      }, []);
    console.log("(API), request current help requests")
       return (
           <div>

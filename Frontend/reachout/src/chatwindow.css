@@ -11,6 +11,7 @@
     height: 10%;
     color: violet;
     overflow: hidden;
+    background-color: slategray;
 }
 .msgs{
     border: 3px solid wheat;
@@ -26,6 +27,7 @@
 }
 .sendsection{
     height: 10%;
+    background-color: slategray;
     /* margin: auto;
     width: 50%;
     border: 3px solid green;

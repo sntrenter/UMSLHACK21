@@ -7,7 +7,7 @@ interface Props {
 function Account(props: Props) {
 
       return (
-        <p>Hello Worl,your name is {props.user}</p>
+        <p>your user id is {props.user}</p>
       );
     }
 export default Account

@@ -2,18 +2,15 @@ import React, { useState } from 'react';
 
 interface Props {
     passUser: Function
+    users?: any;
 }
 
 function Menubar(props: Props) {
-    const [items] = React.useState([
-        {
-          label: "John",
-          value: "user1"
-        },
-        { label: "James", value: "user2" },
-        { label: "Jamantha", value: "user3" }
-      ]);
-      const [selectedOption, setSelectedOption] = useState(items[0].value);
+    const [items] = React.useState([{"id":1,"name":"JOHN"},{"id":2,"name":"ROSE"},{"id":3,"name":"BEN"},{"id":4,"name":"RACHEL"}]
+      
+      );
+    
+      const [selectedOption, setSelectedOption] = useState(items[0].name);
 
       function handleChange(value: string): void{
         console.log("test",value)
@@ -29,10 +26,10 @@ function Menubar(props: Props) {
         >
           {items.map(item => (
             <option
-              key={item.value}
-              value={item.value}
+              key={item.id}
+              value={item.id}
             >
-              {item.label}
+              {item.name}
             </option>
           ))}
         </select>

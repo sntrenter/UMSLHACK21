@@ -5,15 +5,30 @@ import Menubar from "./menubar";
 import Account from "./account";
 import SeeMessages from "./seemessages";
 import ViewRequests from "./viewRequests";
+import { async } from "q";
 
 function App() {
-  const [user, setUser] = useState("user1");
+  const [user, setUser] = useState("");
+  const [users, setUsers] = useState({});
   const [menuSelect, setMenuSelect] = useState(1);
   const [helpReq, setHelpReq] = useState("");
+  //http://localhost:8080/reachout-service/users
+
+  const getusers = async () => {
+    fetch("/reachout-service/users")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("data", data);
+        setUsers(data);
+      });
+  };
+
   useEffect(() => {
+    getusers()
     console.log(user);
     console.log(menuSelect);
-  });
+    console.log(users);
+  }, []);
   function returnMenu(num: any): any {
     switch (num) {
       case 1:
@@ -48,7 +63,7 @@ function App() {
   return (
     <div className="App">
       <div className="App-header">
-        <Menubar passUser={setUser}></Menubar>
+        <Menubar users = {users} passUser={setUser}></Menubar>
 
         <div className="container">
           <div onClick={() => setMenuSelect(1)} className="box">

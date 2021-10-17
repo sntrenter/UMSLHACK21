@@ -41,7 +41,7 @@ function submitHelpRequest() {
         })
 };
 fetch('/reachout-service/topics', requestOptions)
-        .then(response => response.json())
+        //.then(response => response.json())
         //.then(data => this.setState({ postId: data.id }));
 }
 

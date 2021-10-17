@@ -1,7 +1,4 @@
-/*CREATE TABLE USER (
-    ID int,
-    NAME varchar(255)
-);*/
+
 /*
 INSERT INTO USER (ID, NAME) VALUES (1, 'JOHN');
 INSERT INTO USER (ID, NAME) VALUES (2, 'ROSE');

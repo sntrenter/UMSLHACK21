@@ -23,4 +23,44 @@ public class Chat {
     private String chatText;
 
     private LocalDateTime timeStamp;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public ChatInfo getChatInfo() {
+        return chatInfo;
+    }
+
+    public void setChatInfo(ChatInfo chatInfo) {
+        this.chatInfo = chatInfo;
+    }
+
+    public User getChatter() {
+        return chatter;
+    }
+
+    public void setChatter(User chatter) {
+        this.chatter = chatter;
+    }
+
+    public String getChatText() {
+        return chatText;
+    }
+
+    public void setChatText(String chatText) {
+        this.chatText = chatText;
+    }
+
+    public LocalDateTime getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(LocalDateTime timeStamp) {
+        this.timeStamp = timeStamp;
+    }
 }

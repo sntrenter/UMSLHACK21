@@ -1,5 +1,6 @@
 package com.reachout.dto.mapper;
 
+import com.reachout.dto.request.TopicCreate;
 import com.reachout.dto.response.TopicDto;
 import com.reachout.dto.response.UserDto;
 import com.reachout.entity.Topic;
@@ -16,4 +17,10 @@ public interface TopicMapper {
     TopicDto mapToTopicDto(Topic topic);
 
     List<TopicDto> mapToTopicDtos(List<Topic> topics);
+
+/*    @Mappings({
+            @Mapping(target="employeeId", source="entity.id"),
+            @Mapping(target="employeeName", source="entity.name")
+    })
+    Topic mapTopicCreateToTopic(TopicCreate topicCreate);*/
 }

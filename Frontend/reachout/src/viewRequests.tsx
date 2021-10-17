@@ -6,15 +6,17 @@ import "./general.css"
 interface Props {
     user?: string
 }
-let msgs = [
-    "help me find a support group for people stuggling with classes",
-    "anybody know who on campus is in charge of renting out example space",
-    "Interested in a party! message for address!"
-]
+
 
 
 function ViewRequests(props: Props) {
-    
+    const [messages,setMessages] = useState([
+        "help me find a support group for people stuggling with classes",
+        "anybody know who on campus is in charge of renting out example space",
+        "Interested in a party! message for address!"
+    ])
+    let msgs: Array<string> = []
+
     const gettopics = async () => {
         fetch("/reachout-service/topics")
           .then((response) => response.json())
@@ -23,7 +25,11 @@ function ViewRequests(props: Props) {
             msgs = []
             data.forEach((element: any) => { 
                 msgs.push(element["desc"])
+               
             });
+            setMessages(msgs)
+            console.log(msgs)
+
             //setUsers(data);
           });
       };
@@ -33,7 +39,7 @@ function ViewRequests(props: Props) {
    console.log("(API), request current help requests")
       return (
           <div>
-            {msgs.map((i)=>{return <ReqMessage  msg = {i}></ReqMessage>})}
+            {messages.map((i)=>{return <ReqMessage  msg = {i}></ReqMessage>})}
           </div>
 
       );

@@ -29,6 +29,22 @@ function App() {
     console.log(menuSelect);
     console.log(users);
   }, []);
+function submitHelpRequest() {
+  console.log("(API)new help req:", helpReq)
+  console.log("user id for req: ",user)
+  const requestOptions = {
+    method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          seeker_id: user,
+          desc: helpReq,
+        })
+};
+fetch('/reachout-service/topics', requestOptions)
+        .then(response => response.json())
+        //.then(data => this.setState({ postId: data.id }));
+}
+
   function returnMenu(num: any): any {
     switch (num) {
       case 1:
@@ -43,7 +59,7 @@ function App() {
             ></input>
             <button
               className="sbutton"
-              onClick={() => console.log("(API)new help req:", helpReq)}
+              onClick={() => submitHelpRequest()}
             >
               SUBMIT
             </button>
